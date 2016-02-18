@@ -6,7 +6,7 @@
 
 ## Workflow
 
-See [here][https://github.com/MOLB7621/Discussion/issues/9] for the
+See [here](https://github.com/MOLB7621/Discussion/issues/9) for the
 general workflow.
 
 Your answers should be in YAML format in a file called `answers.yml` at
