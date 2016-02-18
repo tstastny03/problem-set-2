@@ -23,7 +23,7 @@ problem is worth 10 points**.
 
 These files are in the `data/` directory.
 
-- Fasta file with human genome sequence: `fasta/chr1.hg19.fa`
+- Fasta file with human genome sequence: `fasta/hg19.chr22.fa`
 - BED file containing ChIP-seq peaks for H3K4me3 in Hela cells:
   `bed/encode.h3k4me3.hela.chr22.bed.gz`
 - BED file with all genes in hg19: `bed/genes.hg19.bed.gz`.
