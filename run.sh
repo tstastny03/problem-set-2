@@ -47,14 +47,13 @@ echo "answer_3: $answer_3" >> answers.yml
 tsschr22=$datasets/bed/tss.hg19.chr22.bed.gz
 genome=$datasets/bedtools/hg19.genome
 
-bedtools flank -i $tsschr22 -g $genome -r 0 -l 1000 -s > tmp2.bed
-sort -k2,2n tmp2.bed > tmpsort.bed
-
-answer_4=$(bedtools map -a tmpsort.bed -b $ctcfsignal -c 4 -o median  \
-	| awk '{print $4, $5}' \
+answer_4=$(bedtools flank -i $tsschr22 -g $genome -r 0 -l 1000 -s \
+	| bedtools sort -i - \
+	| bedtools map -o median -a - -b $ctcfsignal -c 4 \
+	| awk 'BEGIN {OFS="\t"} {print $4, $7}' \
 	| sort -k2n \
 	| tail -n1 \
-	| awk '{print $1}')
+	| cut -f1)
 
 echo "answer_4: $answer_4" >> answers.yml
 
